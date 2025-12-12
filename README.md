@@ -127,10 +127,18 @@ The goal is to support **Road Security / Traffic Patrols** with **proactive aler
 
 ---
 
-## 4. How to Run (Locally)
+## 4. Run the full pipeline
+### 1) Video → tracks
+python extract_tracks_from_video.py
 
-### 4.1 Create and activate a conda environment
+### 2) Tracks → time-series
+python build_time_series_from_tracks.py
 
-```bash
-conda create -n warning_env python=3.10
-conda activate warning_env
+### 3) Time-series → labeled features
+python build_ts_features.py
+
+### 4) Train model
+python train_rf_model_from_history.py
+
+### 5) Predict risk for a given window
+python predict_latest_risk.py
