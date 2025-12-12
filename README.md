@@ -45,7 +45,7 @@ The goal is to support **Road Security / Traffic Patrols** with **proactive aler
        - `flow_t`, `speed_t`, `occ_t` (flow, speed, occupancy)
 
 4. **Train Random Forest Model**  
-   - Script: `train_rf_model_from_history.py`  
+   - Script: `train_rf_from_risk_windows.py`  
    - Input: `data/processed/risk_windows_cam01.csv`  
    - Output: `models/rf_risk_model_cam01.pkl`  
    - Task: binary classification:
@@ -138,7 +138,7 @@ python build_time_series_from_tracks.py
 python build_ts_features.py
 
 ### 4) Train model
-python train_rf_model_from_history.py
+python train_rf_from_risk_windows.py
 
 ### 5) Predict risk for a given window
 python predict_latest_risk.py
